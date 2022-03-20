@@ -6,3 +6,5 @@
 
 > [16.03.2022] :: [v0.0]
     *Crearea si testarea proiectului principal;
+> [20.03.2022] :: [v0.1]
+    *Adaugare clase proiect cu date necesare;

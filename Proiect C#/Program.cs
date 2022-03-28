@@ -1,5 +1,8 @@
 ﻿using System;
-
+// TODOLIST
+// > citire si afisare din fisier pentru fiecare clasa in parte
+// > fara console la getline si setline
+// > Legare comenzi de produse
 namespace aplicatie
 {
     class program

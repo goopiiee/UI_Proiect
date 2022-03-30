@@ -8,3 +8,6 @@
     *Crearea si testarea proiectului principal;
 > [20.03.2022] :: [v0.1]
     *Adaugare clase proiect cu date necesare;
+> [30.03.2022] :: [v0.2]
+    *Adaugare feature citire date din tastatura si salvare in fisier
+    *Adaugare meniu (user-only momentan)

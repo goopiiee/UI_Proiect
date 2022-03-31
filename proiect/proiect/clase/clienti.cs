@@ -23,9 +23,9 @@ namespace proiect
             this.prenume = prenume; 
             this.adresa = adresa;
         }
-        public string Nume { get { return nume; } set { } }
-        public string Prenume { get { return prenume; } set { } }
-        public string Adresa { get { return adresa; } set { } }
-        public string Get_data() { return nume + " | " + prenume + " | " + adresa; }
+        public string Nume { get { return nume; } set { nume = value; } }
+        public string Prenume { get { return prenume; } set { prenume = value; } }
+        public string Adresa { get { return adresa; } set { adresa = value; } }
+        public void Get_data() { Console.WriteLine(nume + " | " + prenume + " | " + adresa); }
     }
 }

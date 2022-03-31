@@ -10,7 +10,7 @@ namespace proiect
     {
         static void Main(string[] args)
         {
-            clienti c1 = new clienti("Andrei", "Marco", "Suceava");
+            clienti c1 = new clienti("Marco", "Polo", "Suceava");
             c1.Get_data();
         }
     }

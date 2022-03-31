@@ -1,10 +1,16 @@
 ﻿using System;
 // TODOLIST
-// > citire si afisare din fisier pentru fiecare clasa in parte [done/2]
-// > Citire si salvare in fisier [done]
-// > fara console la getline si setline [pending..]
-// > Legare comenzi de produse [pending..]
-// > Meniu [done]
+// > Utilizare manager de fisiere in cadrul functiilor ce utilizeaza fisiere
+// > Citire din fisier a datelor pentru fiecare clasa in parte
+// > Citire de la tastatura si salvarea datelor in fisier
+// > Cautare dupa unul sau mai multe criterii ( produse / comenzi )
+// > Meniu cu fiecare clasa in parte,precum si submeniu cu fiecare optiune in parte ce contine : 
+//  >> C - Citire informatii de la tastatura
+//  >> F - Citire informatii din fisier
+//  >> S - Salvare informatii in fisier
+//  >> X - Iesire din program
+//  >> H - Cautare dupa un anumit criteriu
+//  >> A - Afisare informatii din fisier
 namespace aplicatie
 {
     class program
@@ -18,6 +24,7 @@ namespace aplicatie
             {
                 Console.WriteLine("C > Citire informatii de la tastatura");
                 Console.WriteLine("S > Salvare informatii in fisier");
+                Console.WriteLine("F > Cautare dupa anumite criterii");
                 Console.WriteLine("X > Inchidere program");
                 Console.WriteLine("Alegeti o optiune");
                 optiune=Console.ReadLine();

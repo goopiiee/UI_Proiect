@@ -37,8 +37,5 @@ namespace Nivel_Stocare_Date
             Array.Resize(ref clienti, nrClienti);
             return clienti;
         }
-        static void Main(string[] args)
-        {
-        }
     }
 }

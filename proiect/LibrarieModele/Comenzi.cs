@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Librarie_Modele
 {
     public class Comenzi
@@ -14,38 +9,34 @@ namespace Librarie_Modele
         public const int NUMAR_MAXIM_COMENZI = 1000;
         public const int NUMAR_MINIM_COMENZI = 1;
 
-        private const int ID = 1;
-        private const int METODA_PLATA = 2;
+        private const int ID_COMANDA = 1;
+        private const int METODA_DE_PLATA = 2;
 
-        // > Proprietati Auto-Implemented
         public int IdComanda { get; set; }
-        public string MetodaPlata { get; set; } // > Cu cash sau card
+        public string Metoda_Plata { get; set; }
 
-        // > Constructor Implicit
         public Comenzi()
         {
+            Metoda_Plata = string.Empty;
             IdComanda = 0;
-            MetodaPlata =string.Empty;
         }
-        // > Constructor cu parametrii
-        public Comenzi(int id,string metoda)
+        public Comenzi(int idcomanda, string metoda_plata)
         {
-            IdComanda=id;
-            MetodaPlata =metoda;
+            Metoda_Plata = metoda_plata;
+            IdComanda = idcomanda;
         }
-        // > Constructor care reprezinta o linie dintr-un fisier
         public Comenzi(string linieFisier)
         {
             string[] dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
-            IdComanda=Int32.Parse(dateFisier[ID]);
-            MetodaPlata=dateFisier[METODA_PLATA];
+            IdComanda = Int32.Parse(dateFisier[ID_COMANDA]);
+            Metoda_Plata = dateFisier[METODA_DE_PLATA];
         }
         public string ConversieLaSirPentruFisier()
         {
             string ObiectComenziPentruFisier = string.Format("{1}{0}{2}{0}",
             SEPARATOR_PRINCIPAL_FISIER,
             IdComanda.ToString(),
-            (MetodaPlata ?? "Necunoscut")
+            (Metoda_Plata ?? "Necunoscut")
             );
             return ObiectComenziPentruFisier;
         }

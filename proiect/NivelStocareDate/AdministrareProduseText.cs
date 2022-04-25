@@ -37,8 +37,5 @@ namespace Nivel_Stocare_Date
             Array.Resize(ref produse, nrProduse);
             return produse;
         }
-        static void Main(string[] args)
-        {
-        }
     }
 }

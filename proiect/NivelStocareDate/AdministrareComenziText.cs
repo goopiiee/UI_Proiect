@@ -6,7 +6,7 @@ namespace Nivel_Stocare_Date
 {
     public class AdministrareComenziText
     {
-        private const int NUMAR_MAXIM_COMENZI = 10000;
+        private const int NUMAR_MAXIM_COMENZI = 5000;
         private string NumeFisier;
 
         public AdministrareComenziText(string NumeFisier)
@@ -15,11 +15,11 @@ namespace Nivel_Stocare_Date
             Stream streamFisierText = File.Open(NumeFisier, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
-        public void AddComenzi(Comenzi comenzi)
+        public void AddClient(Clienti client)
         {
             using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisier, true))
             {
-                streamWriterFisierText.WriteLine(comenzi.ConversieLaSirPentruFisier());
+                streamWriterFisierText.WriteLine(client.ConversieLaSirPentruFisier());
             }
         }
         public Comenzi[] GetComenzi(out int nrComenzi)

@@ -46,13 +46,16 @@ namespace Librarie_Modele
         }
         public string ConversieLaSirPentruFisier()
         {
-            string ObiectClientiPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}",
+            string ObiectClientiPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}",
             SEPARATOR_PRINCIPAL_FISIER,
             (Nume ?? "Necunoscut"),
             (Prenume ?? "Necunoscut"),
             (Adresa ?? "Necunoscut")
             );
             return ObiectClientiPentruFisier;
+        }
+        static void Main(string[] args)
+        {
         }
     }
 }

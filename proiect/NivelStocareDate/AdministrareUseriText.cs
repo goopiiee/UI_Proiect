@@ -37,8 +37,5 @@ namespace Nivel_Stocare_Date
             Array.Resize(ref useri, nrUseri);
             return useri;
         }
-        static void Main(string[] args)
-        {
-        }
     }
 }

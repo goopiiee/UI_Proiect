@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Librarie_Modele
 {
     public class Produse
@@ -14,40 +9,36 @@ namespace Librarie_Modele
         public const int NUMAR_MAXIM_PRODUSE = 250;
         public const int NUMAR_MINIM_COMENZI = 1;
 
-        private const int ID = 1;
+        private const int ID_PRODUS = 1;
         private const int DENUMIRE = 2;
         private const int CATEGORIE = 3;
         private const int PRET = 4;
 
-        // > Proprietati Auto-Implemented
         public int IdProdus { get; set; }
         public string Denumire { get; set; }
         public string Categorie { get; set; }
         public decimal Pret { get; set; }
 
-        // > Constructor Implicit
         public Produse()
         {
-            IdProdus = 0;
-            Denumire = Categorie = string.Empty;
+            IdProdus = 0; ;
             Pret = 0;
+            Denumire = Categorie = string.Empty;
         }
-        // > Constructor cu parametrii
-        public Produse(int id,string denumire,string categorie, decimal pret)
+        public Produse(int id, string denumire, string categorie, decimal pret)
         {
             IdProdus = id;
+            Pret = pret;
             Denumire = denumire;
             Categorie = categorie;
-            Pret = pret;
         }
-        // > Constructor care reprezinta o linie dintr-un fisier
         public Produse(string linieFisier)
         {
             string[] dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
-            IdProdus = Int32.Parse(dateFisier[ID]);
+            IdProdus = Int32.Parse(dateFisier[ID_PRODUS]);
             Denumire = dateFisier[DENUMIRE];
             Categorie = dateFisier[CATEGORIE];
-            Pret=decimal.Parse(dateFisier[PRET]);
+            Pret = decimal.Parse(dateFisier[PRET]);
         }
         public string ConversieLaSirPentruFisier()
         {

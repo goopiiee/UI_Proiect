@@ -16,3 +16,7 @@
     *Adaugare clase pentru fiecare tip de data in parte
     *Adaugare Administrator de Fisier Text pentru fiecare clasa in parte
     *Adaugare Meniu pentru Testarea functiilor citire/salvare/afisare din fisier text (disponibil momentan pentru clienti)
+> [26.04.2022] :: [v0.4]
+    *Rezolvare de mici buguri
+    *Adaugare Meniu Principal
+    *Adaugare Submeniuri pentru fiecare clasa in parte

@@ -25,9 +25,8 @@ namespace Librarie_Modele
             Pret = 0;
             Denumire = Categorie = string.Empty;
         }
-        public Produse(int id, string denumire, string categorie, decimal pret)
+        public Produse(string denumire, string categorie, decimal pret)
         {
-            IdProdus = id;
             Pret = pret;
             Denumire = denumire;
             Categorie = categorie;

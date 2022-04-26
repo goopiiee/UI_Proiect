@@ -15,11 +15,11 @@ namespace Nivel_Stocare_Date
             Stream streamFisierText = File.Open(NumeFisier, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
-        public void AddClient(Clienti client)
+        public void AddComenzi(Comenzi comanda)
         {
             using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisier, true))
             {
-                streamWriterFisierText.WriteLine(client.ConversieLaSirPentruFisier());
+                streamWriterFisierText.WriteLine(comanda.ConversieLaSirPentruFisier());
             }
         }
         public Comenzi[] GetComenzi(out int nrComenzi)

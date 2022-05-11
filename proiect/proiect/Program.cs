@@ -46,27 +46,40 @@ namespace proiect
                 } while (optiune_principala != 'X');
             }
 
-            string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
-            string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
+            string FisierComenzi = ConfigurationManager.AppSettings["NumeFisierComenzi"];
+            string locatieFisierComenziSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisierComenzi = locatieFisierComenziSolutie + "\\" + FisierComenzi;
 
-            AdministrareClientiText administrareClienti = new AdministrareClientiText(caleCompletaFisier);
+            string FisierClienti = ConfigurationManager.AppSettings["NumeFisierClienti"];
+            string locatieFisierClientiSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisierClienti = locatieFisierClientiSolutie + "\\" + FisierClienti;
+            
+            string FisierUseri = ConfigurationManager.AppSettings["NumeFisierUseri"];
+            string locatieFisierUseriSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisierUseri = locatieFisierUseriSolutie + "\\" + FisierUseri;
+
+            string FisierProduse = ConfigurationManager.AppSettings["NumeFisierProduse"];
+            string locatieFisierProduseSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisierProduse = locatieFisierProduseSolutie + "\\" + FisierProduse;
+
+
+            AdministrareClientiText administrareClienti = new AdministrareClientiText(caleCompletaFisierClienti);
             Clienti ClientNou = new Clienti();
             int nrClienti = 0;
             administrareClienti.GetClienti(out nrClienti);
 
-            AdministrareUseriText administrareUseri = new AdministrareUseriText(caleCompletaFisier);
+            AdministrareUseriText administrareUseri = new AdministrareUseriText(caleCompletaFisierUseri);
             Useri UserNou = new Useri();
             int nrUseri = 0;
             administrareUseri.GetUseri(out nrUseri);
 
 
-            AdministrareComenziText administrareComenzi = new AdministrareComenziText(caleCompletaFisier);
+            AdministrareComenziText administrareComenzi = new AdministrareComenziText(caleCompletaFisierComenzi);
             Comenzi ComandaNoua = new Comenzi();
             int nrComenzi = 0;
             administrareComenzi.GetComenzi(out nrComenzi);
 
-            AdministrareProduseText administrareProduse = new AdministrareProduseText(caleCompletaFisier);
+            AdministrareProduseText administrareProduse = new AdministrareProduseText(caleCompletaFisierProduse);
             Produse ProdusNou = new Produse();
             int nrProduse = 0;
             administrareProduse.GetProduse(out nrProduse);
@@ -92,7 +105,7 @@ namespace proiect
                         case 'S':
                             int idUseri = nrUseri + 1;
                             UserNou.IdUser = idUseri;
-                            //adaugare student in fisier
+                            //adaugare user in fisier
                             administrareUseri.AddUser(UserNou);
                             nrUseri++;
                             break;
@@ -129,7 +142,7 @@ namespace proiect
                         case 'S':
                             int idClienti = nrClienti + 1;
                             ClientNou.IdClient = idClienti;
-                            //adaugare student in fisier
+                            //adaugare client in fisier
                             administrareClienti.AddClient(ClientNou);
                             nrClienti++;
                             break;
@@ -187,6 +200,7 @@ namespace proiect
                 char OptiuneComenzi;
                 do
                 {
+                    Console.WriteLine("");
                     Console.WriteLine("---Comenzi---");
                     Console.WriteLine("C. Citire informatii comanda de la tastatura");
                     Console.WriteLine("F. Afisare comenzi din fisier");
@@ -221,11 +235,12 @@ namespace proiect
         }
         public static void Afisare_Client(Clienti client)
         {
-            string infoClient = string.Format("Clientul cu id-ul #{0} are numele: {1} {2} si Adresa: {3}",
+            string infoClient = string.Format("Clientul cu id-ul #{0} are numele: {1} {3} si Adresa: {2}",
                     client.IdClient,
                     client.Nume ?? " NECUNOSCUT ",
                     client.Prenume ?? " NECUNOSCUT ",
-                    client.Adresa ?? "NECUNOSCUT"
+                    client.Adresa ?? "NECUNOSCUT",
+                    client.IdClient
                     );
 
             Console.WriteLine(infoClient);
@@ -243,7 +258,7 @@ namespace proiect
             Console.WriteLine("Introduceti numele");
             string nume = Console.ReadLine();
 
-            Console.WriteLine("Introduceti prenumele");
+            Console.WriteLine("Introduceti numele");
             string prenume = Console.ReadLine();
 
             Console.WriteLine("Introduceti Adresa");

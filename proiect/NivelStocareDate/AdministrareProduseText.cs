@@ -7,17 +7,17 @@ namespace Nivel_Stocare_Date
     public class AdministrareProduseText
     {
         private const int NUMAR_MAXIM_PRODUSE = 250;
-        private string NumeFisier;
+        private string NumeFisierProduse;
 
-        public AdministrareProduseText(string NumeFisier)
+        public AdministrareProduseText(string NumeFisierProduse)
         {
-            this.NumeFisier = NumeFisier;
-            Stream streamFisierText = File.Open(NumeFisier, FileMode.OpenOrCreate);
+            this.NumeFisierProduse = NumeFisierProduse;
+            Stream streamFisierText = File.Open(NumeFisierProduse, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
         public void AddProdus(Produse produs)
         {
-            using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisier, true))
+            using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisierProduse, true))
             {
                 streamWriterFisierText.WriteLine(produs.ConversieLaSirPentruFisier());
             }
@@ -25,7 +25,7 @@ namespace Nivel_Stocare_Date
         public Produse[] GetProduse(out int nrProduse)
         {
             Produse[] produse = new Produse[NUMAR_MAXIM_PRODUSE];
-            using (StreamReader streamReader = new StreamReader(NumeFisier))
+            using (StreamReader streamReader = new StreamReader(NumeFisierProduse))
             {
                 string linieFisier;
                 nrProduse = 0;

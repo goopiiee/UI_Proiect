@@ -20,3 +20,7 @@
     *Rezolvare de mici buguri
     *Adaugare Meniu Principal
     *Adaugare Submeniuri pentru fiecare clasa in parte
+> [11.05.2022] :: [v0.5]
+    *Adaugare scriere fisier pentru fiecare clasa in parte
+    *Rezolvare buguri input clase
+    *Adaugare Windows Forms

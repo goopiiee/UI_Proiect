@@ -7,17 +7,17 @@ namespace Nivel_Stocare_Date
     public class AdministrareClientiText
     {
         private const int NUMAR_MAXIM_CLIENTI = 500;
-        private string NumeFisier;
+        private string NumeFisierClienti;
 
-        public AdministrareClientiText(string NumeFisier)
+        public AdministrareClientiText(string NumeFisierClienti)
         {
-            this.NumeFisier = NumeFisier;
-            Stream streamFisierText = File.Open(NumeFisier, FileMode.OpenOrCreate);
+            this.NumeFisierClienti = NumeFisierClienti;
+            Stream streamFisierText = File.Open(NumeFisierClienti, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
         public void AddClient(Clienti client)
         {
-            using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisier, true))
+            using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisierClienti, true))
             {
                 streamWriterFisierText.WriteLine(client.ConversieLaSirPentruFisier());
             }
@@ -25,7 +25,7 @@ namespace Nivel_Stocare_Date
         public Clienti[] GetClienti(out int nrClienti)
         {
             Clienti[] clienti = new Clienti[NUMAR_MAXIM_CLIENTI];
-            using (StreamReader streamReader = new StreamReader(NumeFisier))
+            using (StreamReader streamReader = new StreamReader(NumeFisierClienti))
             {
                 string linieFisier;
                 nrClienti = 0;

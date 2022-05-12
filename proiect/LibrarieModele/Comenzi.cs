@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Librarie_Modele
 {
-    public class Comenzi
+    public class Comenzi : Produse
     {
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
         private const char SEPARATOR_SECUNDAR_FISIER = ' ';
@@ -9,11 +9,12 @@ namespace Librarie_Modele
         public const int NUMAR_MAXIM_COMENZI = 1000;
         public const int NUMAR_MINIM_COMENZI = 1;
 
-        private const int ID_COMANDA = 1;
-        private const int METODA_DE_PLATA = 2;
+        private const int ID_COMANDA = 0;
+        private const int METODA_DE_PLATA = 1;
 
         public int IdComanda { get; set; }
         public string Metoda_Plata { get; set; }
+
 
         public Comenzi()
         {

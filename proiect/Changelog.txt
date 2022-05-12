@@ -24,3 +24,12 @@
     *Adaugare scriere fisier pentru fiecare clasa in parte
     *Rezolvare buguri input clase
     *Adaugare Windows Forms
+> [12.05.2022] :: [v0.6]
+    *Rezolvare de buguri
+    *Adaugare Windows Forms pentru:
+                            LoginScreen > Functional
+                            MeniuPrincipal > Functional
+                            Useri > Functional
+                            Produse > Pending
+                            Clienti > Pending
+                            Comenzi Pending

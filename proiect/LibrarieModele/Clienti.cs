@@ -14,6 +14,7 @@ namespace Librarie_Modele
         public const int NUMAR_MAXIM_CLIENTI = 100;
         public const int NUMAR_MINIM_CLIENTI = 1;
 
+        private const int IDCLIENT = 0;
         private const int NUME = 1;
         private const int PRENUME = 2;
         private const int ADRESA = 3;
@@ -27,6 +28,7 @@ namespace Librarie_Modele
         // > Constructor Implicit
         public Clienti()
         {
+            IdClient = 0;
             Nume = Prenume = Adresa = string.Empty;
         }
         // > Constructor cu parametrii
@@ -40,14 +42,16 @@ namespace Librarie_Modele
         public Clienti(string linieFisier)
         {
             string[] dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
+            IdClient = Int32.Parse(dateFisier[IDCLIENT]);
             Nume = dateFisier[NUME];
             Prenume = dateFisier[PRENUME];
             Adresa = dateFisier[ADRESA];
         }
         public string ConversieLaSirPentruFisier()
         {
-            string ObiectClientiPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}",
+            string ObiectClientiPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}",
             SEPARATOR_PRINCIPAL_FISIER,
+            (IdClient),
             (Nume ?? "Necunoscut"),
             (Prenume ?? "Necunoscut"),
             (Adresa ?? "Necunoscut")

@@ -220,8 +220,14 @@ namespace proiect
                             nrComenzi++;
                             break;
                         case 'F':
+                            Produse[] produse = administrareProduse.GetProduse(out nrProduse);
+                            Clienti[] clienti = administrareClienti.GetClienti(out nrClienti);
                             Comenzi[] comenzi=administrareComenzi.GetComenzi(out nrComenzi);
                             AfisareComenzi(comenzi, nrComenzi);
+                            Console.WriteLine();
+                            AfisareProduse(produse, nrProduse);
+                            Console.WriteLine();
+                            AfisareClienti(clienti, nrClienti);
                             break;
                         case 'B':
                             MeniuPrincipal();
@@ -235,7 +241,7 @@ namespace proiect
         }
         public static void Afisare_Client(Clienti client)
         {
-            string infoClient = string.Format("Clientul cu id-ul #{0} are numele: {1} {3} si Adresa: {2}",
+            string infoClient = string.Format("Clientul cu id-ul #{0} are numele: {1} {2} si Adresa: {3}",
                     client.IdClient,
                     client.Nume ?? " NECUNOSCUT ",
                     client.Prenume ?? " NECUNOSCUT ",
@@ -270,10 +276,11 @@ namespace proiect
 
         public static void Afisare_User(Useri user)
         {
-            string infoUseri = string.Format("Userul cu id-ul #{0} are numele: {1} {2}.",
+            string infoUseri = string.Format("Userul cu id-ul #{0} are numele: {1} {2} si  unic [{3}]",
                    user.IdUser,
                    user.Nume ?? " NECUNOSCUT ",
-                   user.Prenume ?? " NECUNOSCUT "
+                   user.Prenume ?? " NECUNOSCUT ",
+                   user.UserUniqueId
                    );
             Console.WriteLine(infoUseri);
         }
@@ -299,12 +306,13 @@ namespace proiect
 
         public static void Afisare_Produs(Produse produs)
         {
-            string infoProduse = string.Format("Produsul cu id-ul #{0} are denumirea: {1}, categoria {2} si pretul  {3}.",
+            string infoProduse = string.Format("Produsul cu id-ul #{0} are denumirea: {1}, categoria {2}, pretul {3} in cantitatea {4}.",
                   produs.IdProdus,
                   produs.Denumire ?? " NECUNOSCUT ",
                   produs.Categorie ?? " NECUNOSCUT ",
-                  produs.Pret
-                  );
+                  produs.Pret,
+                  produs.Cantitate
+                  ) ;
             Console.WriteLine(infoProduse);
         }
         public static void AfisareProduse(Produse[] produse,int nrProduse)
@@ -326,16 +334,19 @@ namespace proiect
             Console.WriteLine("Introduceri Pretul");
             decimal pret=decimal.Parse(Console.ReadLine());
 
-            Produse produs = new Produse(denumirea,categoria,pret);
+            Console.WriteLine("Introduceti Cantitatea");
+            int cantitate = Int32.Parse(Console.ReadLine());
+
+            Produse produs = new Produse(denumirea,categoria,pret,cantitate);
             return produs;
         }
 
         public static void Afisare_Comanda(Comenzi comanda)
         {
-            string infoComenzi = string.Format("Comenda cu id-ul #{0} are metoda de plata {1}.",
+            string infoComenzi = string.Format("Comanda cu id-ul #{0} are metoda de plata {1}.",
                    comanda.IdComanda,
                    comanda.Metoda_Plata ?? "NECUNOSCUT"
-                   ); ;
+                   );
             Console.WriteLine(infoComenzi);
         }
         public static void AfisareComenzi(Comenzi[] comenzi,int nrComenzi)

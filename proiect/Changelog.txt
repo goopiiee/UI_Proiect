@@ -33,7 +33,6 @@
                             Produse > Pending
                             Clienti > Pending
                             Comenzi Pending
-    *Adaugare Update-uri Readme.md
 > [21.05.2022] :: [v0.7]
     *Rezolvare de buguri minore
     *Adaugare sistem de Login
@@ -47,3 +46,4 @@
     *Refacere UI in integralitate
     *Scoatere Labels pentru Windows Forms
     *Adaugare DataGridView pentru formularele ce necesita Labeluri pentru vizualizarea datelor.
+    *Adaugare Update-uri Readme.md

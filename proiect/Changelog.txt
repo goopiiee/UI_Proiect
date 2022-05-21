@@ -33,6 +33,7 @@
                             Produse > Pending
                             Clienti > Pending
                             Comenzi Pending
+    *Adaugare Update-uri Readme.md
 > [21.05.2022] :: [v0.7]
     *Rezolvare de buguri minore
     *Adaugare sistem de Login

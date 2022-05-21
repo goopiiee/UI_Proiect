@@ -6,6 +6,7 @@ namespace Nivel_Stocare_Date
 {
     public class AdministrareUseriText
     {
+        
         private const int NUMAR_MAXIM_USERI = 25;
         private string NumeFisierUseri;
 

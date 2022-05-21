@@ -43,7 +43,8 @@ namespace GUI
         }
         private void FereastraUseri_Load(object sender, EventArgs e)
         {
-            AfisareUseri();
+            //AfisareUseri();
+            AfisareUseriGrid();
         }
 
         private void User_ID_Click(object sender, EventArgs e)
@@ -53,8 +54,8 @@ namespace GUI
 
         private void User_ButonAfisare_Click(object sender, EventArgs e)
         {
-            
-            AfisareUseri();
+            //AfisareUseri();
+            AfisareUseriGrid();
         }
         private void AfisareUseri()
         {
@@ -66,19 +67,11 @@ namespace GUI
             int i = 0;
             foreach(Useri user in useri)
             {
-                //> Control Label tip Tabel :: ID
-                lblsID[i] = new Label();
-                lblsID[i].Width = LATIME_CONTROL;
-                lblsID[i].Text = Convert.ToString(user.IdUser);
-                lblsID[i].Left =  2 * DIMENSIUNE_PAS_X;
-                lblsID[i].Top = (i + 1) * 2 * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsID[i]);
-
                 //> Control Label tip Tabel :: Nume
                 lblsNume[i] = new Label();
                 lblsNume[i].Width = LATIME_CONTROL;
                 lblsNume[i].Text = user.Nume;
-                lblsNume[i].Left = 3 * DIMENSIUNE_PAS_X;
+                lblsNume[i].Left = 2 * DIMENSIUNE_PAS_X;
                 lblsNume[i].Top = (i + 1) * 2 * DIMENSIUNE_PAS_Y;
                 this.Controls.Add(lblsNume[i]);
 
@@ -86,7 +79,7 @@ namespace GUI
                 lblsPrenume[i] = new Label();
                 lblsPrenume[i].Width = LATIME_CONTROL;
                 lblsPrenume[i].Text = user.Prenume;
-                lblsPrenume[i].Left = 4 * DIMENSIUNE_PAS_X;
+                lblsPrenume[i].Left = 3 * DIMENSIUNE_PAS_X;
                 lblsPrenume[i].Top = (i + 1) * 2 * DIMENSIUNE_PAS_Y;
                 this.Controls.Add(lblsPrenume[i]);
 
@@ -94,17 +87,15 @@ namespace GUI
                 lblsUUID[i] = new Label();
                 lblsUUID[i].Width= LATIME_CONTROL;
                 lblsUUID[i].Text = Convert.ToString(user.UserUniqueId);
-                lblsUUID[i].Left = 5 * DIMENSIUNE_PAS_X;
+                lblsUUID[i].Left = 4 * DIMENSIUNE_PAS_X;
                 lblsUUID[i].Top= (i + 1) * 2 * DIMENSIUNE_PAS_Y;
                 this.Controls.Add(lblsUUID[i]);
-
                 i++;
             }
         }
 
         private void User_ButonInapoi_Click(object sender, EventArgs e)
         {
-            
             MeniuPrincipal meniuPrincipal=new MeniuPrincipal();
             meniuPrincipal.Show();
             this.Hide();
@@ -114,6 +105,21 @@ namespace GUI
         {
           FereastraUseriAdaugare window= new FereastraUseriAdaugare();
             window.Show();
+        }
+        private void AfisareUseriGrid()
+        {
+            Useri[] useri = adminUseri.GetUseri(out int nrUseri);
+            //reset continut control DataGridView
+            dataGridProduse.DataSource = useri;
+
+            //!!!! Controlul de tip DataGridView are ca sursa de date lista de obiecte de tip Student !!!
+            dataGridProduse.DataSource = useri;
+            dataGridProduse.DataSource = useri.Select(u => new { u.Nume, u.Prenume, u.UserUniqueId}).ToList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
         }
     }
 }

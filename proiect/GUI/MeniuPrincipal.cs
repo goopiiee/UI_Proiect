@@ -36,7 +36,7 @@ namespace GUI
             {
                 userWindow.Show();
                 LoadingErr.Hide();
-                this.Hide();
+                
             }
             else
             {
@@ -47,19 +47,24 @@ namespace GUI
         private void Produse_Click(object sender, EventArgs e)
         {
             productWindow.Show();
-            this.Hide();
+           
         }
 
         private void Clienti_Click(object sender, EventArgs e)
         {
             clientWindow.Show();
-            this.Hide();
+           
         }
 
         private void Comenzi_Click(object sender, EventArgs e)
         {
             orderWindow.Show();
-            this.Hide();
+            
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,3 +33,16 @@
                             Produse > Pending
                             Clienti > Pending
                             Comenzi Pending
+> [21.05.2022] :: [v0.7]
+    *Rezolvare de buguri minore
+    *Adaugare sistem de Login
+    *Adaugare Windows Forms pentru:
+                            LoginScreen > Functional
+                            MeniuPrincipal > Functional
+                            Useri > Functional
+                            Produse > Functional
+                            Clienti > Functional
+                            Comenzi > Functional
+    *Refacere UI in integralitate
+    *Scoatere Labels pentru Windows Forms
+    *Adaugare DataGridView pentru formularele ce necesita Labeluri pentru vizualizarea datelor.
